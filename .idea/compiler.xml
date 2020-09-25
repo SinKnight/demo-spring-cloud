@@ -7,14 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-cloud-gateway-demo" />
+        <module name="spring-cloud-eureka-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-cloud-eureka-demo" target="1.8" />
       <module name="spring-cloud-gateway-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-cloud-eureka-demo" options="-parameters" />
       <module name="spring-cloud-gateway-demo" options="-parameters" />
     </option>
   </component>
