@@ -4,20 +4,25 @@ server:
 spring:
   application:
     name: spring-cloud-gateway-demo
-  # ¿ªÆô Gateway ·şÎñ×¢²áÖĞĞÄ·şÎñ·¢ÏÖ
   cloud:
     gateway:
+      # å¼€å¯ Gateway æœåŠ¡æ³¨å†Œä¸­å¿ƒæœåŠ¡å‘ç°
       discovery:
         locator:
           enabled: true
+      routes:
+        - id: csdn-service
+          uri: https://blog.csdn.net
+          predicates:
+            - Path=/csdn
 
-# Eureka Server ÅäÖÃ
+# Eureka Server é…ç½®
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:10000/eureka/
 
-# ÅäÖÃGatewayÈÕÖ¾µÈ¼¶£¬Êä³ö×ª·¢Ï¸½ÚĞÅÏ¢
+# é…ç½®Gatewayæ—¥å¿—ç­‰çº§ï¼Œè¾“å‡ºè½¬å‘ç»†èŠ‚ä¿¡æ¯
 logging:
   level:
     org.springframework.cloud.gateway: debug
