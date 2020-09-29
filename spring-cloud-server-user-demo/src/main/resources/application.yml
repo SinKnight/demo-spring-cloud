@@ -1,0 +1,12 @@
+server:
+  port: 12000
+
+spring:
+  application:
+    name: spring-cloud-server-user-demo
+
+# Eureka Server ≈‰÷√
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka/
